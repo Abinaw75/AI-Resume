@@ -1,0 +1,453 @@
+
+/* =========================================
+   HIRESENSE AI - EMERALD EDITION
+   Professional Resume Analysis Dashboard
+========================================= */
+
+/* Bootstrap theme overrides */
+:root {
+  --bs-primary: #167765;
+  --bs-primary-rgb: 22, 119, 101;
+  --bs-success: #27866e;
+  --bs-success-rgb: 39, 134, 110;
+  --bs-warning: #d99b37;
+  --bs-warning-rgb: 217, 155, 55;
+  --bs-body-color: #263b36;
+  --bs-body-bg: #f3f6f2;
+  --bs-border-color: #e0e8e1;
+  --bs-link-color: #167765;
+  --bs-link-hover-color: #105c4e;
+}
+
+.ai-resume-page {
+  --ai-primary: #167765;
+  --ai-primary-dark: #105c4e;
+  --ai-primary-light: #e3f1ec;
+  --ai-accent: #d99b37;
+  --ai-background: #f3f6f2;
+  --ai-card: #ffffff;
+  --ai-text: #263b36;
+  --ai-muted: #74847d;
+  --ai-border: #e0e8e1;
+
+  min-height: 100vh;
+  background: var(--ai-background);
+  color: var(--ai-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+/* Page layout */
+.ai-resume-page .container {
+  max-width: 1120px;
+}
+
+/* Buttons */
+.ai-resume-page .btn-primary {
+  --bs-btn-bg: #167765;
+  --bs-btn-border-color: #167765;
+  --bs-btn-hover-bg: #105c4e;
+  --bs-btn-hover-border-color: #105c4e;
+  --bs-btn-active-bg: #0d4d42;
+  --bs-btn-active-border-color: #0d4d42;
+  --bs-btn-disabled-bg: #8ab5a8;
+  --bs-btn-disabled-border-color: #8ab5a8;
+
+  font-weight: 600;
+  box-shadow: 0 5px 14px rgba(22, 119, 101, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ai-resume-page .btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(22, 119, 101, 0.24);
+}
+
+.ai-resume-page .btn-outline-secondary {
+  --bs-btn-color: #53665e;
+  --bs-btn-border-color: #d4ded6;
+  --bs-btn-hover-bg: #e7eee8;
+  --bs-btn-hover-color: #263b36;
+  --bs-btn-hover-border-color: #c4d4c8;
+  --bs-btn-hover-color: #263b36;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+.ai-resume-page .btn:focus-visible {
+  outline: 3px solid rgba(22, 119, 101, 0.25);
+  outline-offset: 3px;
+}
+
+/* Header */
+.ai-dashboard-header {
+  margin-bottom: 42px !important;
+}
+
+.ai-dashboard-header h1 {
+  color: #203b32;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+
+.ai-dashboard-header p {
+  max-width: 650px;
+  color: var(--ai-muted) !important;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ai-dashboard-header .badge {
+  background: #dceee6 !important;
+  color: #12624f !important;
+  font-weight: 700;
+  padding: 8px 13px;
+}
+
+.ai-header-icon,
+.ai-start-icon,
+.ai-warning-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+}
+
+.ai-header-icon {
+  color: #167765;
+  background: linear-gradient(135deg, #dcefe7, #edf4e9);
+  box-shadow: 0 8px 24px rgba(22, 119, 101, 0.10);
+}
+
+.ai-start-icon {
+  color: #167765;
+  background: #e3f1ec;
+}
+
+.ai-warning-icon {
+  color: #a86b16;
+  background: #fff1d8;
+}
+
+/* Main cards */
+.ai-main-card,
+.ai-score-panel {
+  background: var(--ai-card);
+  border: 1px solid var(--ai-border) !important;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(35, 65, 49, 0.045) !important;
+  transition: box-shadow 0.2s ease;
+}
+
+.ai-main-card:hover {
+  box-shadow: 0 9px 25px rgba(35, 65, 49, 0.075) !important;
+}
+
+.ai-description {
+  max-width: 590px;
+  color: var(--ai-muted) !important;
+  line-height: 1.8;
+}
+
+/* Score panel */
+.ai-score-panel {
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(22, 119, 101, 0.10),
+      transparent 35%
+    ),
+    #ffffff;
+}
+
+.ai-small-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: #e3f1ec;
+  color: #167765;
+}
+
+.ai-score-number {
+  color: #b77924;
+  font-size: clamp(3.5rem, 8vw, 5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+.ai-score-number span {
+  color: #9aa69f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-left: 7px;
+}
+
+.ai-score-panel h2 {
+  color: #263b36;
+}
+
+.ai-score-panel .text-secondary {
+  color: var(--ai-muted) !important;
+}
+
+.ai-score-progress {
+  height: 14px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8eee9;
+}
+
+.ai-score-bar {
+  border-radius: 20px;
+  background: linear-gradient(90deg, #167765, #59a58a);
+  transition: width 1s ease;
+}
+
+/* Summary cards */
+.ai-summary-card {
+  background: #ffffff;
+  border: 1px solid var(--ai-border) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(35, 65, 49, 0.035) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ai-summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(35, 65, 49, 0.09) !important;
+}
+
+.ai-summary-card .text-secondary {
+  color: var(--ai-muted) !important;
+}
+
+.ai-summary-card h3 {
+  color: #263b36;
+}
+
+.ai-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+}
+
+.ai-summary-icon.primary {
+  color: #167765;
+  background: #e3f1ec;
+}
+
+.ai-summary-icon.warning {
+  color: #a86b16;
+  background: #fff1d8;
+}
+
+.ai-summary-icon.danger {
+  color: #b94f4f;
+  background: #fbeaea;
+}
+
+.ai-summary-icon.success {
+  color: #27866e;
+  background: #e2f3e9;
+}
+
+/* Section headings */
+.ai-main-card h2 {
+  color: #263b36;
+}
+
+.ai-main-card .text-primary,
+.ai-main-card svg.text-primary {
+  color: #167765 !important;
+}
+
+/* Indicator cards */
+.ai-indicator-card {
+  height: 100%;
+  padding: 22px;
+  border: 1px solid #e1eae2;
+  border-radius: 15px;
+  background: #f8faf7;
+  overflow-wrap: anywhere;
+  transition: border-color 0.2s ease, background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ai-indicator-card:hover {
+  background: #f1f7f2;
+  border-color: #b8d6c6;
+  transform: translateY(-2px);
+}
+
+.ai-indicator-card h3 {
+  color: #28483b;
+}
+
+.ai-indicator-card .text-secondary {
+  color: var(--ai-muted) !important;
+}
+
+.ai-indicator-card .badge.text-bg-primary {
+  background: #dcefe7 !important;
+  color: #12624f !important;
+}
+
+.ai-example-list {
+  padding-left: 19px;
+  color: #65766e;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.ai-example-list li + li {
+  margin-top: 5px;
+}
+
+/* Generic phrases */
+.ai-phrase-badge {
+  padding: 10px 14px;
+  color: #93621d;
+  background: #fff3dc;
+  border: 1px solid #f0d8a9;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: normal;
+  text-align: left;
+}
+
+/* Suggestions */
+.ai-suggestion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px;
+  background: #f1f8f3;
+  border: 1px solid #dcece0;
+  border-radius: 13px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ai-suggestion-item:hover {
+  background: #e9f4ec;
+  transform: translateX(3px);
+}
+
+.ai-suggestion-item p {
+  color: #425a4e;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.ai-suggestion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 31px;
+  height: 31px;
+  color: #167765;
+  background: #dcefe6;
+  border-radius: 50%;
+}
+
+/* Alerts */
+.ai-resume-page .alert-warning {
+  color: #76551f;
+  background: #fff8e9;
+  border-color: #f0dfb8;
+  border-radius: 13px;
+}
+
+.ai-resume-page .alert-light {
+  color: #53665e;
+  background: #f7faf7;
+  border-color: #e0e8e1 !important;
+  border-radius: 12px;
+}
+
+.ai-resume-page .alert-danger {
+  border-radius: 12px;
+}
+
+/* Loading animation */
+.ai-spin {
+  animation: aiSpin 1s linear infinite;
+}
+
+@keyframes aiSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Accessibility */
+.ai-resume-page button,
+.ai-resume-page .card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ai-resume-page button:disabled {
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ai-resume-page .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .ai-dashboard-header {
+    margin-bottom: 30px !important;
+  }
+
+  .ai-dashboard-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .ai-score-panel .card-body {
+    padding: 25px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .ai-dashboard-header h1 {
+    font-size: 1.65rem;
+    letter-spacing: -0.7px;
+  }
+
+  .ai-dashboard-header p {
+    font-size: 14px;
+  }
+
+  .ai-score-number {
+    font-size: 3.5rem;
+  }
+
+  .ai-main-card .card-body {
+    padding: 20px !important;
+  }
+
+  .ai-indicator-card {
+    padding: 17px;
+  }
+
+  .ai-suggestion-item {
+    padding: 13px;
+  }
+
+  .ai-summary-card .card-body {
+    padding: 15px !important;
+  }
+}

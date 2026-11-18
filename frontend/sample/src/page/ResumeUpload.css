@@ -1,0 +1,208 @@
+
+/* HireSense AI - Resume Upload Page */
+
+.resume-page {
+  min-height: 100vh;
+  padding: 30px 5%;
+  background: #f3f6f2;
+  color: #263b36;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 0;
+  border: none;
+  background: transparent;
+  color: #167765;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #105c4e;
+}
+
+.resume-upload-card {
+  width: 100%;
+  max-width: 680px;
+  margin: 45px auto;
+  padding: 40px;
+  border: 1px solid #e0e8e1;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(36, 70, 49, 0.07);
+}
+
+.resume-heading {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.resume-icon {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  background: #e3f1ec;
+  color: #167765;
+}
+
+.resume-heading h1 {
+  margin: 0 0 10px;
+  color: #263b36;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.resume-heading p {
+  margin: 0;
+  color: #78877f;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.upload-dropzone {
+  min-height: 230px;
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #b8d5c5;
+  border-radius: 15px;
+  background: #f8fbf8;
+  color: #167765;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.upload-dropzone:hover {
+  border-color: #167765;
+  background: #eff7f1;
+}
+
+.upload-dropzone h3 {
+  margin: 14px 0 6px;
+  color: #29463a;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.upload-dropzone p {
+  margin: 0 0 10px;
+  color: #78877f;
+  font-size: 13px;
+}
+
+.upload-dropzone span {
+  color: #98a49c;
+  font-size: 12px;
+}
+
+.selected-file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #dce9df;
+  border-radius: 12px;
+  background: #f3f8f4;
+  color: #167765;
+}
+
+.selected-file div {
+  flex: 1;
+  min-width: 0;
+}
+
+.selected-file strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #354a40;
+  font-size: 13px;
+}
+
+.selected-file p {
+  margin: 4px 0 0;
+  color: #87958d;
+  font-size: 12px;
+}
+
+.upload-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 10px;
+  background: #167765;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.upload-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #105c4e;
+}
+
+.upload-submit:disabled {
+  background: #a8c9bc;
+  cursor: not-allowed;
+}
+
+.upload-error,
+.upload-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  margin-top: 18px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.upload-error {
+  border: 1px solid #f3c7c7;
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.upload-success {
+  border: 1px solid #b9e2c8;
+  background: #eaf7ee;
+  color: #167345;
+}
+
+@media (max-width: 600px) {
+  .resume-page {
+    padding: 20px 14px;
+  }
+
+  .resume-upload-card {
+    padding: 24px 18px;
+    margin-top: 25px;
+  }
+
+  .resume-heading h1 {
+    font-size: 23px;
+  }
+
+  .upload-dropzone {
+    min-height: 200px;
+  }
+}
